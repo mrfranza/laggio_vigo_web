@@ -7,7 +7,7 @@ $(document).ready(function() {
         $('h1').css('color', '#222222');
         $('#loader-wrapper').remove();
         flag1 = false;
-    }, 4000);
+    }, 0);
 
 });
 
@@ -31,7 +31,8 @@ function frase_a_caso() {
         "Le Montagne Pesano...dammi il tempo di scaricarle",
         "A Laggio la connessione non va sempre bene quindi per piacere..dimenticati questo sito",
         "Servizio aperto 24/24 senza pubblicità e accessibile a tutti",
-        "Se ci dovesse mettere troppo prova a ricaricare o andare sul ciampon(Magari li qualcosa succede, ah si e ricordati di portare il cellulare carico)",
+        "Se ci dovesse mettere troppo prova a ricaricare o andare sul ciampon" +
+        "(Magari li qualcosa succede, ah si e ricordati di portare il cellulare carico)",
     ];
 
     tag.innerHTML = myArray[Math.floor(Math.random() * myArray.length)];
