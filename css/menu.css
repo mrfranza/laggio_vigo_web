@@ -7,17 +7,7 @@ body {
     padding: 0;
 }
 
-#menulaterale {
-    position: absolute;
-    width: 240px;
-    height: calc(100% - 56px);
-    bottom: 0;
-    left: 0;
-    background-color: #fff;
-    color: white;
-}
-
-#scrivania {
+.scrivania {
     position: absolute;
     width: calc(100% - 240px);
     height: calc(100% - 56px);
@@ -104,4 +94,34 @@ body {
     top: 50%;
     transform: translate(0, -50%);
     color: gray;
+}
+
+.widemenu {
+    position: absolute;
+    width: 240px;
+    height: calc(100% - 56px);
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    color: white;
+}
+
+.menuchange {
+    position: absolute;
+    width: 80px;
+    height: calc(100% - 56px);
+    bottom: 0;
+    left: 0;
+    background-color: whitesmoke;
+    color: white;
+}
+
+.scrivaniachange {
+    position: absolute;
+    width: calc(100% - 80px);
+    height: calc(100% - 56px);
+    bottom: 0;
+    right: 0;
+    background-color: #F9F9F9;
+    color: black;
 }
