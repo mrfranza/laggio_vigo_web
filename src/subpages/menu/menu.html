@@ -4,13 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.31/system.js"></script>
+    <script src="https://kit.fontawesome.com/b1e99f21d9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../../css/menu.css">
     <title>Menu</title>
 </head>
 
 <body>
-    <div id="menulaterale" class="widemenu"></div>
-    <div id="scrivania" class="scrivania"></div>
+    <div id="menulaterale" class="widemenu">
+        <a href="../webcams/webcams.html" target="target">
+            <div class="scelta_menu_laterale">
+                <i class="fas fa-camera iconcina"></i>
+                <span class="menu_title">WebCam</span>
+            </div>
+        </a>
+        <a href="../meteo/meteo.html" target="target">
+            <div class="scelta_menu_laterale">
+                <i class="fas fa-cloud iconcina"></i>
+                <span class="menu_title">Meteo Live</span>
+            </div>
+        </a>
+        <a href="https://www.3bmeteo.com/moduli_esterni/localita_7_giorni_compatto/9209/ffffff/2bacfd/5e5e5e/ffffff/it" target="target">
+            <div class="scelta_menu_laterale">
+                <i class="fas fa-wind iconcina"></i>
+                <span class="menu_title">Previsioni</span>
+            </div>
+        </a>
+    </div>
+    <div id="scrivania" class="scrivania">
+        <iframe name="target" src="../meteo/meteo.html" id="desktop" frameborder="0" border="0" allowtransparency="true" scrolling="no">Hai il computer o il cellulare con google non aggiornato! anche se succede vuol dire che non lo aggiorni veramente dall'epoca di marcocaco</iframe>
+    </div>
     <div id="barrasuperiore">
         <div id="menu_icon" onclick="ShowHideMenu()">
             <div class="container_menu_icon" onclick="MenuAnimation(this)">

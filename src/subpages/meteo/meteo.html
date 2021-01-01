@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../css/meteo.css">
+    <script src="https://kit.fontawesome.com/b1e99f21d9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../../css/modal.css">
+    <title>Meteo</title>
+</head>
+
+<body>
+    <div id="lista">
+        <marquee behavior="" class="seriviooffertoda" direction="left">
+            Servizio disponibile grazie ai contributi elargiti da: Albergo Miramonti, Albergo Giannina, Arte Ottica, Capitolo S. Antonio Abate, Ditta OMM Srl di Franchin Guido, Gelateria Gastronomia Serenella, Minimarket Eliana, Parrucchiera Martini Giuseppina, Pizzeria
+            Ristorante Al Fogher, Rifugio Tenente Fabbro, Spicchi d'Arte, Tutto per la Casa
+        </marquee>
+        <button id="botoneeee" class="fab-container">
+            <div class="fab fab-icon-holder">
+                <i class="fas fa-plus"></i>
+            </div>
+        </button>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <marquee behavior="alternate" direction="left" id="live"></marquee>
+                <table id="myTable">
+                    <thead>
+                        <tr>
+                            <th>Descrizione</th>
+                            <th>Dato</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodu3"></tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <script src="../../../js/seasoncolor.js"></script>
+    <script src="../../../js/meteo.js"></script>
+    <script src="../../../js/meteo_plus.js"></script>
+    <script src="../../../js/modal.js"></script>
+    <script>
+        var live = document.getElementById('live');
+        live.innerHTML = "Informazioni LIVE - " + new Date();
+    </script>
+</body>
+
+</html>

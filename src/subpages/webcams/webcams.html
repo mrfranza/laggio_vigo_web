@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../css/webcam.css">
+    <script src="https://kit.fontawesome.com/b1e99f21d9.js" crossorigin="anonymous"></script>
+    <title>Webcam</title>
+</head>
+
+<body>
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 4</div>
+            <img class="mariottide" src="http://www.laggiodicadore.it/servizi/webcam/laggio/campanileweb.jpg" style="width:100%">
+            <div class="text">Vista panoramica di Laggio dal campanile della chiesa di S.Antonio Abate in primo piano Via Tomaso Da Rin</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 4</div>
+            <img class="mariottide" src="http://www.laggiodicadore.it/servizi/webcam/laggio/ciamponweb.jpg" style="width:100%">
+            <div class="text">Vista panoramica dei paesi di Vigo e Laggio da Col Ciampon, sullo sfondo il monte Cridola</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 4</div>
+            <img class="mariottide" src="http://www.laggiodicadore.it/Prova/logotesto.php" style="width:100%">
+            <div class="text">Vista panoramica di Laggio dall' albergo Miramonti. Il monte Schiavon con parte del borgo Villanuova</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 4</div>
+            <img class="mariottide" src="http://www.laggiodicadore.it/Vigocam/webcamtesto.php" style="width:100%">
+            <div class="text">Vista panoramica di Vigo dal campanile della chiesa di S. Martino. Sullo sfondo il m. Tudaio la chiesetta di S. Daniele e sotto col Ciampon con l'appostamento militare della grande guerra</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+    <br>
+    <a id="botoneeee" class="fab-container" onclick="ZoomIN()">
+        <div class="fab fab-icon-holder">
+            <i class="fas fa-search-plus"></i>
+        </div>
+    </a>
+    <button onclick="Maps()" class="fab-container" style="left: 50px;">
+        <div class="fab fab-icon-holder" style="background-color: cadetblue;">
+            <i class="fas fa-map"></i>
+        </div>
+    </button>
+    <script src="../../../js/slideshow.js"></script>
+    <script src="../../../js/previewImage.min.js">
+        const imgList = [
+            'http://www.laggiodicadore.it/servizi/webcam/laggio/campanileweb.jpg',
+            '2.png',
+            '3.png'
+        ];
+        previewImage.start({
+            urls: imgList,
+            current: '1.png'
+        });
+    </script>
+</body>
+
+</html>
