@@ -33,6 +33,11 @@ function frase_a_caso() {
         "Servizio aperto 24/24 senza pubblicità e accessibile a tutti",
         "Se ci dovesse mettere troppo prova a ricaricare o andare sul ciampon" +
         "(Magari li qualcosa succede, ah si e ricordati di portare il cellulare carico)",
+        "Curiosità: la connessione è più veloce con una palanca di vino",
+        "Aspetti da troppo?...fatti una partita a briscola",
+        "Aspetta che smetta di nevicare sul Tudaio",
+        "Cos'è questo profumo di ragù ?!?",
+        "Attenzione, avvistato nativo del luogo a fissare un cantiere, elaborazione in corso..."
     ];
 
     tag.innerHTML = myArray[Math.floor(Math.random() * myArray.length)];
