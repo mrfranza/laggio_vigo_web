@@ -16,20 +16,20 @@
             Servizio disponibile grazie ai contributi elargiti da: Albergo Miramonti, Albergo Giannina, Arte Ottica, Capitolo S. Antonio Abate, Ditta OMM Srl di Franchin Guido, Gelateria Gastronomia Serenella, Minimarket Eliana, Parrucchiera Martini Giuseppina, Pizzeria
             Ristorante Al Fogher, Rifugio Tenente Fabbro, Spicchi d'Arte, Tutto per la Casa
         </marquee>
-        <button id="botoneeee" class="fab-container">
+        <a href="./meto_plus.html" style="text-decoration: none;color: black;" target="modalframe" id="botoneeee" class="fab-container">
             Più Informazioni
             <div class="fab fab-icon-holder" style="background-color: coral;">
                 <i class="fas fa-plus"></i>
             </div>
-        </button>
-        <a target="_blank" href="https://www.3bmeteo.com/moduli_esterni/localita_7_giorni_compatto/9209/ffffff/2bacfd/5e5e5e/ffffff/it" class="fab-container" style="bottom: 150px;text-decoration: none;color: black;">
+        </a>
+        <a target="modalframe" id="botoneeee2" href="https://www.3bmeteo.com/moduli_esterni/localita_7_giorni_compatto/9209/ffffff/2bacfd/5e5e5e/ffffff/it" class="fab-container" style="bottom: 150px;text-decoration: none;color: black;">
             Previsioni
             <div class="fab fab-icon-holder" style="background-color: cadetblue;">
                 <i class="fas fa-wind"></i>
             </div>
         </a>
-        <a target="_blank" href="https://www.arpa.veneto.it/neve_valanghe/it/html/" class="fab-container" style="bottom: 250px;text-decoration: none;color: black;">
-            Info Allerta Valanghe ARPA
+        <a target="modalframe" id="botoneeee3" href="https://www.arpa.veneto.it/neve_valanghe/it/images/prova_0.png" class="fab-container" style="bottom: 250px;text-decoration: none;color: black;">
+            Info allerta valanghe Arpa
             <div class="fab fab-icon-holder" style="background-color: red;">
                 <i class="fas fa-exclamation-triangle"></i>
             </div>
@@ -38,18 +38,9 @@
         <div id="myModal" class="modal">
 
             <!-- Modal content -->
-            <div class="modal-content">
+            <div class="modal-content" style="margin-bottom: 160px;">
                 <span class="close">&times;</span>
-                <marquee behavior="alternate" direction="left" id="live"></marquee>
-                <table id="myTable">
-                    <thead>
-                        <tr>
-                            <th>Descrizione</th>
-                            <th>Dato</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tbodu3"></tbody>
-                </table>
+                <iframe name="modalframe" id="iFrame1" src="" style="position:relative;height: 700px;width: 100%;" frameborder="0"></iframe>
             </div>
 
         </div>
@@ -58,10 +49,6 @@
     <script src="../../../js/meteo.js"></script>
     <script src="../../../js/meteo_plus.js"></script>
     <script src="../../../js/modal.js"></script>
-    <script>
-        var live = document.getElementById('live');
-        live.innerHTML = "Informazioni LIVE - " + new Date();
-    </script>
 </body>
 
 </html>

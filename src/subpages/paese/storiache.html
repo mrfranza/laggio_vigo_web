@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E' una storia che...</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <div class="bg" style="background: url('../../jpeg/Laggio1ombra.jpeg');background-size: cover;background-repeat: no-repeat;"> </div>
+        <div class="bg" style="background: url('../../jpeg/Laggioombra2.jpeg');background-size: cover;background-repeat: no-repeat;"> </div>
+    </div>
+
+    <section style="position: absolute;z-index:100;background-color:rgba(255, 255, 255, 0.61);left: 0;top:0;width: 50%;height:100%;margin: 0;padding: 10px;color: black;font-family: 'Times New Roman', Times, serif; font-size: large;">
+        <h1>Laggio di Cadore</h1>
+        <p>E' una storia cominciata tanto tempo fa. </p>
+        <p>Quello che appare davanti a voi, </p>
+        <p>risultato di immani forze della natura </p>
+        <p>che nei tempi primordiali della terra </p>
+        <p>hanno plasmato modellato la superfice </p>
+        <p>della terra creando montagne, valli </p>
+        <p>e altipiani ammantati</p>
+        <p>di vegetazione e boschi da rendere </p>
+        <p>unico al mondo questo paesaggio montano.</p>
+        <br>
+        <p>Propio quassu' tra i monti Cridola e </p>
+        <p>Tudaio dolcemente si distende Laggio</p>
+        <p>paesino delle Dolomiti che potrebbe</p>
+        <p>sembrare per la sua posizione</p>
+        <p>distante o estraneo dal complesso</p>
+        <p>montano, ma che invece racchiude</p>
+        <p>tradizioni storico-culturali che sono</p>
+        <p>un tesoro importante della vita </p>
+        <p>sociale e economica del Cadore.</p>
+    </section>
+
+    <style>
+        h1 {
+            background-color: aliceblue;
+        }
+        
+        p {
+            margin: 8px 0;
+        }
+        
+        .bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script>
+        function changeBackground() {
+            $(".bg").first().fadeIn("slow", function showNext() {
+                var next = $(this).next('div').length ? $(this).next('div') : $(".bg").first();
+                $(this).siblings().fadeOut('slow').delay(3000);
+                next.fadeIn("slow", showNext);
+            });
+        }
+
+
+        $(document).ready(function() {
+            setTimeout(changeBackground, 7000);
+        });
+    </script>
+</body>
+
+</html>

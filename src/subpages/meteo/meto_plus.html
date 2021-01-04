@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../css/meteo.css">
+    <script src="https://kit.fontawesome.com/b1e99f21d9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../../css/modal.css">
+    <title>Meteo Più info</title>
+</head>
+
+<body>
+    <marquee behavior="alternate" direction="left" id="live"></marquee>
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>Descrizione</th>
+                <th>Dato</th>
+            </tr>
+        </thead>
+        <tbody id="tbodu3"></tbody>
+    </table>
+    <script src="../../../js/seasoncolor.js"></script>
+    <script src="../../../js/meteo.js"></script>
+    <script src="../../../js/meteo_plus.js"></script>
+    <script src="../../../js/modal.js"></script>
+    <script>
+        var live = document.getElementById('live');
+        live.innerHTML = "Informazioni LIVE - " + new Date();
+    </script>
+</body>
+
+</html>

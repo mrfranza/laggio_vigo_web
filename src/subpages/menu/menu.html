@@ -11,7 +11,7 @@
     <title>Menu</title>
 </head>
 
-<body>
+<body>submenu
     <div id="menulaterale" class="widemenu">
         <a href="../webcams/webcams.html" target="target">
             <div class="scelta_menu_laterale">
@@ -25,6 +25,34 @@
                 <span class="menu_title">Meteo Live</span>
             </div>
         </a>
+        <hr>
+        <a onclick="submenu(1)">
+            <div class="scelta_menu_laterale" style="cursor:zoom-in;">
+                <i class="fas fa-dot-circle iconcina"></i>
+                <span class="menu_title">Il Paese</span>
+            </div>
+        </a>
+        <div id="submenu1" class="submenu">
+            <a href="../paese/storiache.html" target="target">
+                <div class="scelta_menu_laterale">
+                    <i class="fas fa-book iconcina"></i>
+                    <span class="menu_title">E' una storia che...</span>
+                </div>
+            </a>
+            <a href="../paese/caratteristiche.html" target="target">
+                <div class="scelta_menu_laterale">
+                    <i class="fas fa-book iconcina"></i>
+                    <span class="menu_title">Caratteristiche</span>
+                </div>
+            </a>
+            <a href="../paese/perche.html" target="target">
+                <div class="scelta_menu_laterale">
+                    <i class="fas fa-book iconcina"></i>
+                    <span class="menu_title">Perchè questo sito?</span>
+                </div>
+            </a>
+        </div>
+
     </div>
     <div id="scrivania" class="scrivania">
         <iframe name="target" src="../meteo/meteo.html" id="desktop" frameborder="0" border="0" allowtransparency="true" scrolling="no">Hai il computer o il cellulare con google non aggiornato! anche se succede vuol dire che non lo aggiorni veramente dall'epoca di marcocaco</iframe>
@@ -45,6 +73,12 @@
         </div>
     </div>
     <script src="../../../js/menu_icon.js"></script>
+    <script>
+        function submenu(n) {
+            var submenu = document.getElementById('submenu' + n);
+            submenu.classList.toggle("show");
+        }
+    </script>
 </body>
 
 </html>
