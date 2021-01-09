@@ -32,6 +32,7 @@ weather[0]["description"]
         li.style.listStyle = "none";
         li.style.color = "black";
         CambiaColoreTitolo();
+        ToggleNightMode2();
     })
     .catch((e) => {
         console.log("Please search for a valid city 😩\n" + e);

@@ -13,7 +13,7 @@ body {
 .slideshow-container {
     position: absolute;
     margin: auto;
-    width: 75%;
+    width: fit-content;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -64,7 +64,7 @@ body {
     padding-bottom: 10px;
     position: absolute;
     font-size: medium;
-    bottom: 8px;
+    bottom: 20px;
     width: 100%;
     text-align: center;
     background-color: rgb(0, 0, 0);

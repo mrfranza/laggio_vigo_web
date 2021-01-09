@@ -9,15 +9,15 @@
 
 <body style="width: 100%;height: 100%;">
     <div id="sfondo"></div>
-    <section style="position: absolute;background-color:rgba(255, 255, 255, 0.61);left: 0;top:0;width: 50%;height:100%;margin: 0;padding: 10px;color: black;font-family: 'Times New Roman', Times, serif; font-size: large;">
+    <section style="position: absolute;right:0;top:0;width: 40%;height:100%;margin: 0;padding: 20px;color: black;font-family: 'Times New Roman', Times, serif; font-size: x-large;background-color: white;opacity: 0.9;">
         <h1>Caratteristiche</h1>
-        <p>Laggio di Cadore, frazione del Comune di Vigo, da cui dista un chilometro circa, &egrave; il centro pi&ugrave; grande dell&rsquo;Oltrepiave, conta attualmente circa 800 abitanti. Situato in posizione soleggiata &egrave; circondato a sud dalla
-            catena dei M. Miaron, Cridola e Montanel, a nord dalle propaggini settentrionali della catena Tudaio-Brentoni con il M. Tudaio, la Cima Bragagnina, la Cima dei Landre, il M. Schiavon e il Popera Valgrande. Ad owest gli fanno da corona l&rsquo;Antelao,
-            le Marmarole e il Ciareido con il bellissimo Pian dei Buoi. Il paese &egrave; adagiato ai piedi della chiesa di S. Antonio Abate (XIIII sec.) e nella sua parte meridionale &egrave; percorso dal &ldquo;Rin di Laggio&rdquo; che lo separa dai
-            prati di Salagona e da Monderon su cui sorge la ex Colonia Alpina di Rovigo. Verso Vigo troviamo il Colle di Agorgo e a settentrione la grande piana di Cialea sovrastata dal Col Ciampon e Col Poeca sulle cui asperit&agrave; sorge la chiesetta
-            di S. Daniele. Alle sue spalle le localit&agrave; di Adi&egrave;s, Masoi, Zergolon e Deine. Le borgate sono : Villanova, Pociase, Borgo Chiare, Borgo De Nicol&ograve;, Varzeto, Agorgo, Piovos, Salagona, Tambar, Rin di Sopra, Rin di Sotto,
-            Trasaga. La via principale, tra Borgo Chiare e Borgo De Nicol&ograve; &egrave; intitolata al pittore Tomaso Da Rin Betta, la via tra Rin di Sopra e Rin di Sotto era detta Via Rindemera mentre la piazza aveva il nome di S. Antonio fino al 1923
-            quando fu dedicata al prof. Antonio Ronzon.</p>
+        <p style="padding-bottom: 50px;">Laggio di Cadore, frazione del Comune di Vigo, da cui dista un chilometro circa, &egrave; il centro pi&ugrave; grande dell&rsquo;Oltrepiave, conta attualmente circa 800 abitanti. Situato in posizione soleggiata &egrave; circondato a sud dalla
+            catena dei M. Miaron, Cridola e Montanel, a nord dalle propaggini settentrionali della catena Tudaio-Brentoni con il M. Tudaio, la Cima Bragagnina, la Cima dei Landre, il M. Schiavon e il Popera Valgrande. <br>Ad ovest gli fanno da corona
+            l&rsquo;Antelao, le Marmarole e il Ciareido con il bellissimo Pian dei Buoi. Il paese &egrave; adagiato ai piedi della chiesa di S. Antonio Abate (XIIII sec.) e nella sua parte meridionale &egrave; percorso dal &ldquo;Rin di Laggio&rdquo;
+            che lo separa dai prati di Salagona e da Monderon su cui sorge la ex Colonia Alpina di Rovigo.<br>Verso Vigo troviamo il Colle di Agorgo e a settentrione la grande piana di Cialea sovrastata dal Col Ciampon e Col Poeca sulle cui asperit&agrave;
+            sorge la chiesetta di S. Daniele. Alle sue spalle le localit&agrave; di Adi&egrave;s, Masoi, Zergolon e Deine. Le borgate sono : Villanova, Pociase, Borgo Chiare, Borgo De Nicol&ograve;, Varzeto, Agorgo, Piovos, Salagona, Tambar, Rin di Sopra,
+            Rin di Sotto, Trasaga. La via principale, tra Borgo Chiare e Borgo De Nicol&ograve; &egrave; intitolata al pittore Tomaso Da Rin Betta, la via tra Rin di Sopra e Rin di Sotto era detta Via Rindemera mentre la piazza aveva il nome di S. Antonio
+            fino al 1923 quando fu dedicata al prof. Antonio Ronzon.</p>
     </section>
     <style>
         img {
@@ -48,7 +48,21 @@
             background-image: url("../../jpeg/gallo-cedrone-web.jpeg");
             background-size: cover;
         }
+        
+        section {
+            overflow-y: scroll;
+        }
     </style>
+    <script>
+        function ToggleNightMode() {
+            const hours = new Date().getHours();
+            if (hours > 6 && hours < 20)
+                document.getElementById('sfondo').style.filter = "invert(0%)";
+            else
+                document.getElementById('sfondo').style.filter = "invert(100%)";
+        }
+        window.onload = ToggleNightMode();
+    </script>
 </body>
 
 </html>

@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../css/webcam.css">
     <script src="https://kit.fontawesome.com/b1e99f21d9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../photoswipe/photoswipe.css">
+
+    <!-- Skin CSS file (styling of UI - buttons, caption, etc.)
+     In the folder of skin CSS file there are also:
+     - .png and .svg icons sprite, 
+     - preloader.gif (for browsers that do not support CSS animations) -->
+    <link rel="stylesheet" href="../../photoswipe/default-skin/default-skin.css">
+
+    <!-- Core JS file -->
+    <script src="../../photoswipe/photoswipe.min.js"></script>
+
+    <!-- UI JS file -->
+    <script src="../../photoswipe/photoswipe-ui-default.min.js"></script>
     <title>Webcam</title>
 </head>
 
@@ -15,25 +28,25 @@
 
         <div class="mySlides fade">
             <div class="numbertext">1 / 4</div>
-            <img class="mariottide" src="http://www.laggiodicadore.it/servizi/webcam/laggio/campanileweb.jpg" style="width:100%">
+            <img class="mariottide" id="uno" src="http://www.laggiodicadore.it/servizi/webcam/laggio/campanileweb.jpg" style="width:100%">
             <div class="text">Vista panoramica di Laggio dal campanile della chiesa di S.Antonio Abate in primo piano Via Tomaso Da Rin</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">2 / 4</div>
-            <img class="mariottide" src="http://www.laggiodicadore.it/servizi/webcam/laggio/ciamponweb.jpg" style="width:100%">
+            <img class="mariottide" id="due" src="http://www.laggiodicadore.it/servizi/webcam/laggio/ciamponweb.jpg" style="width:100%">
             <div class="text">Vista panoramica dei paesi di Vigo e Laggio da Col Ciampon, sullo sfondo il monte Cridola</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">3 / 4</div>
-            <img class="mariottide" src="http://www.laggiodicadore.it/Prova/logotesto.php" style="width:100%">
+            <img class="mariottide" id="tre" src="http://www.laggiodicadore.it/Prova/logotesto.php" style="width:100%">
             <div class="text">Vista panoramica di Laggio dall' albergo Miramonti. Il monte Schiavon con parte del borgo Villanuova</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">4 / 4</div>
-            <img class="mariottide" src="http://www.laggiodicadore.it/Vigocam/webcamtesto.php" style="width:100%">
+            <img class="mariottide" id="quattro" src="http://www.laggiodicadore.it/Vigocam/webcamtesto.php" style="width:100%">
             <div class="text">Vista panoramica di Vigo dal campanile della chiesa di S. Martino. Sullo sfondo il m. Tudaio la chiesetta di S. Daniele e sotto col Ciampon con l'appostamento militare della grande guerra</div>
         </div>
 
@@ -42,7 +55,7 @@
 
     </div>
     <br>
-    <a id="botoneeee" class="fab-container" href="../imageV/image-viewer.html">
+    <a id="botoneeee" class="fab-container" onclick="Mario()">
         <div class="fab fab-icon-holder">
             <i class="fas fa-search-plus"></i>
         </div>
@@ -52,7 +65,197 @@
             <i class="fas fa-map"></i>
         </div>
     </button>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <!-- Background of PhotoSwipe. 
+             It's a separate element as animating opacity is faster than rgba(). -->
+        <div class="pswp__bg"></div>
+
+        <!-- Slides wrapper with overflow:hidden. -->
+        <div class="pswp__scroll-wrap">
+
+            <!-- Container that holds slides. 
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+            <div class="pswp__ui pswp__ui--hidden">
+
+                <div class="pswp__top-bar">
+
+                    <!--  Controls are self-explanatory. Order can be changed. -->
+
+                    <div class="pswp__counter"></div>
+
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                    <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                    <!-- element will get class pswp__preloader--active when preloader is running -->
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+
+
+        // build items array
+        var items = [{
+            src: 'http://www.laggiodicadore.it/servizi/webcam/laggio/campanileweb.jpg',
+            w: 1200,
+            h: 900
+        }, {
+            src: 'http://www.laggiodicadore.it/servizi/webcam/laggio/ciamponweb.jpg',
+            w: 1200,
+            h: 900
+        }, {
+            src: 'http://www.laggiodicadore.it/Prova/logotesto.php',
+            w: 1200,
+            h: 900
+        }, {
+            src: 'http://www.laggiodicadore.it/Vigocam/webcamtesto.php',
+            w: 1200,
+            h: 900
+        }];
+
+        // define options (if needed)
+        var options = {
+            // optionName: 'option value'
+            // for example:
+            index: 0, // start at first slide
+            escKey: false,
+            // Size of top & bottom bars in pixels,
+            // "bottom" parameter can be 'auto' (will calculate height of caption)
+            // option applies only when mouse is used, 
+            // or width of screen is more than 1200px
+            // 
+            // (Also refer to `parseVerticalMargin` event)
+            barsSize: {
+                top: 44,
+                bottom: 'auto'
+            },
+
+            // Adds class pswp__ui--idle to pswp__ui element when mouse isn't moving for 4000ms
+            timeToIdle: 4000,
+
+            // Same as above, but this timer applies when mouse leaves the window
+            timeToIdleOutside: 1000,
+
+            // Delay until loading indicator is displayed
+            loadingIndicatorDelay: 1000,
+
+            // Function builds caption markup
+
+            // Buttons/elements
+            closeEl: true,
+            captionEl: true,
+            fullscreenEl: true,
+            zoomEl: true,
+            shareEl: false,
+            counterEl: true,
+            arrowEl: true,
+            preloaderEl: true,
+
+            // Tap on sliding area should close gallery
+            tapToClose: false,
+
+            // Tap should toggle visibility of controls
+            tapToToggleControls: false,
+
+            // Mouse click on image should close the gallery,
+            // only when image is smaller than size of the viewport
+            clickToCloseNonZoomable: false,
+
+            // Element classes click on which should close the PhotoSwipe.
+            // In HTML markup, class should always start with "pswp__", e.g.: "pswp__item", "pswp__caption".
+            // 
+            // "pswp__ui--over-close" class will be added to root element of UI when mouse is over one of these elements
+            // By default it's used to highlight the close button.
+            //closeElClasses: ['item', 'caption', 'zoom-wrap', 'ui', 'top-bar'],
+
+            // Separator for "1 of X" counter
+            indexIndicatorSep: ' / ',
+
+
+
+            // Share buttons
+            // 
+            // Available variables for URL:
+            // {{url}}             - url to current page
+            // {{text}}            - title
+            // {{image_url}}       - encoded image url
+            // {{raw_image_url}}   - raw image url
+
+
+            // Next 3 functions return data for share links
+            // 
+            // functions are triggered after click on button that opens share modal,
+            // which means that data should be about current (active) slide
+
+        };
+
+
+        // Initializes and opens PhotoSwipe
+        var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+
+        function Mario() {
+            gallery.init();
+        }
+    </script>
     <script src="../../../js/slideshow.js"></script>
+    <script>
+        function ToggleNightMode3() {
+            const hours = new Date().getHours();
+            if (hours > 6 && hours < 20) {
+                document.getElementById('uno').style.filter = "invert(0%)";
+                document.getElementById('due').style.filter = "invert(0%)";
+                document.getElementById('tre').style.filter = "invert(0%)";
+                document.getElementById('quattro').style.filter = "invert(0%)";
+            } else {
+                document.getElementById('uno').style.filter = "invert(100%)";
+                document.getElementById('due').style.filter = "invert(100%)";
+                document.getElementById('tre').style.filter = "invert(100%)";
+                document.getElementById('quattro').style.filter = "invert(100%)";
+            }
+        }
+        ToggleNightMode3();
+    </script>
 </body>
 
 </html>

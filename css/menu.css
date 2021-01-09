@@ -173,8 +173,28 @@ body {
 
 .submenu {
     display: none;
+    transform: translate(10px, 0);
 }
 
 .show {
     display: block;
+    animation-name: show;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.3s;
+    animation-delay: 0;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-play-state: running;
+}
+
+@keyframes show {
+    0% {
+        transform: translate(10px, -20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(10px, 0px);
+        opacity: 100%;
+    }
 }

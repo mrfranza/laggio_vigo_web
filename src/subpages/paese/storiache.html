@@ -10,11 +10,11 @@
 
 <body>
     <div>
-        <div class="bg" style="background: url('../../jpeg/Laggio1ombra.jpeg');background-size: cover;background-repeat: no-repeat;"> </div>
-        <div class="bg" style="background: url('../../jpeg/Laggioombra2.jpeg');background-size: cover;background-repeat: no-repeat;"> </div>
+        <div class="bg" id="bg1" style="background: url('../../jpeg/storiache.jpeg');background-size: cover;background-repeat: no-repeat;"> </div>
+        <div class="bg" id="bg2" style="background: url('../../jpeg/storiache2.jpeg');background-size: cover;background-repeat: no-repeat;"> </div>
     </div>
 
-    <section style="position: absolute;z-index:100;background-color:rgba(255, 255, 255, 0.61);left: 0;top:0;width: 50%;height:100%;margin: 0;padding: 10px;color: black;font-family: 'Times New Roman', Times, serif; font-size: large;">
+    <section style="position: absolute;right:0;top:0;width: 40%;height:100%;margin: 0;padding: 20px;color: black;font-family: 'Times New Roman', Times, serif; font-size: x-large;background-color: white;opacity: 0.9;">
         <h1>Laggio di Cadore</h1>
         <p>E' una storia cominciata tanto tempo fa. </p>
         <p>Quello che appare davanti a voi, </p>
@@ -34,16 +34,18 @@
         <p>montano, ma che invece racchiude</p>
         <p>tradizioni storico-culturali che sono</p>
         <p>un tesoro importante della vita </p>
-        <p>sociale e economica del Cadore.</p>
+        <p style="padding-bottom: 50px;">sociale e economica del Cadore.</p>
     </section>
 
     <style>
         h1 {
             background-color: aliceblue;
+            text-align: center;
         }
         
         p {
             margin: 8px 0;
+            text-align: center;
         }
         
         .bg {
@@ -55,12 +57,16 @@
             margin: 0;
             padding: 0;
         }
+        
+        section {
+            overflow-y: scroll;
+        }
     </style>
     <script>
         function changeBackground() {
             $(".bg").first().fadeIn("slow", function showNext() {
                 var next = $(this).next('div').length ? $(this).next('div') : $(".bg").first();
-                $(this).siblings().fadeOut('slow').delay(3000);
+                $(this).siblings().fadeOut('slow').delay(7000);
                 next.fadeIn("slow", showNext);
             });
         }
@@ -69,6 +75,19 @@
         $(document).ready(function() {
             setTimeout(changeBackground, 7000);
         });
+    </script>
+    <script>
+        function ToggleNightMode() {
+            const hours = new Date().getHours();
+            if (hours > 6 && hours < 20) {
+                document.getElementById('bg1').style.filter = "invert(0%)";
+                document.getElementById('bg2').style.filter = "invert(0%)";
+            } else {
+                document.getElementById('bg1').style.filter = "invert(100%)";
+                document.getElementById('bg2').style.filter = "invert(100%)";
+            }
+        }
+        window.onload = ToggleNightMode();
     </script>
 </body>
 

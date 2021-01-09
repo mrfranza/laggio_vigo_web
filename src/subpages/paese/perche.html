@@ -9,11 +9,19 @@
 
 <body style="width: 100%;height: 100%;">
     <div id="sfondo"></div>
-    <section style="position: absolute;left: 0;top:0;width: 50%;height:100%;margin: 0;padding: 10px;color: black;font-family: 'Times New Roman', Times, serif; font-size: large;">
+    <section style="position: absolute;right:0;top:0;width: 40%;height:100%;margin: 0;padding: 20px;color: black;font-family: 'Times New Roman', Times, serif; font-size: x-large;background-color: white;opacity: 0.9;">
+        <hr>
+        <p style="font-size: smaller;">Il sito originale si trova all'indirizzo
+            <a href="http://www.laggiodicadore.it" target="_blank">www.laggiodicadore.it</a>
+            <br>Questo è un clone rinnovato e modernizzato creato senza scopo di lucro ma con l'unico motivo di dare un contributo gratuito alla comunità di Laggio di Cadore.
+            <br>
+            <p style="font-size: 15px;">A cura di Alberto Franzin</p>
+        </p>
+        <hr>
         <h1>Perchè questo sito?</h1>
         <p><span class="GramE"><span style='font-family:"Viner Hand ITC";'>A partire dagli</span></span><span style='font-family:"Viner Hand ITC";'>&nbsp;anni &rsquo;60 di questo secolo &nbsp;<span class="SpellE">Laggio</span> ha avuto un grande sviluppo
             urbanistico e nello stesso tempo ha subito una grande trasformazione sociale &nbsp;passando da una economia caratterizzata da una forte emigrazione sia stagionale che definitiva e dalle attivit&agrave; <span class="SpellE">silvo-pastorali</span>            ad una economia industriale grazie all&rsquo;occhialeria. Sono sorte cos&igrave; numerose aziende che hanno offerto nuove opportunit&agrave; di lavoro integrato da una discreta attivit&agrave; turistica.</span>&nbsp;</p>
-        <p><span class="GramE"><span style='font-family:"Viner Hand ITC";'>Se</span></span> tutto ci&ograve; ha portato ad un certo &nbsp;benessere &nbsp;di contro il paese ha <u>sofferto per la perdita di tutti quei valori e quelle tradizioni</u> che lo
+        <p style="padding-bottom: 50px;"><span class="GramE"><span style='font-family:"Viner Hand ITC";'>Se</span></span> tutto ci&ograve; ha portato ad un certo &nbsp;benessere &nbsp;di contro il paese ha <u>sofferto per la perdita di tutti quei valori e quelle tradizioni</u> che lo
             avevano caratterizzato per secoli.<br><span style='font-family:"Viner Hand ITC";'>Questo sito &egrave; <span class="GramE">stato voluto</span> dagli autori per contribuire in qualche modo al recupero morale e materiale di tutto quel patrimonio
             avito il quale, ne siamo convinti, costituisce un &nbsp;viatico sicuro per le generazioni a venire e nello stesso tempo costituir&agrave; un punto di riferimento e di conoscenza per tutti coloro che, vivendo lontano dalla &ldquo;Piccola Patria&rdquo;,
             vorranno mantenere o riannodare quel cordone ombelicale al proprio luogo di origine.</span>&nbsp;</p>
@@ -44,11 +52,24 @@
             margin: 0;
             top: 0;
             left: 0;
-            background-image: url("../../jpeg/perche.jpeg");
+            background-image: url("../../jpeg/perche2.jpeg");
             background-size: cover;
-            filter: blur(10px);
+        }
+        
+        section {
+            overflow-y: scroll;
         }
     </style>
+    <script>
+        function ToggleNightMode() {
+            const hours = new Date().getHours();
+            if (hours > 6 && hours < 20)
+                document.getElementById('sfondo').style.filter = "invert(0%)";
+            else
+                document.getElementById('sfondo').style.filter = "invert(100%)";
+        }
+        window.onload = ToggleNightMode();
+    </script>
 </body>
 
 </html>

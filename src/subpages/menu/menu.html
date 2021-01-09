@@ -7,6 +7,7 @@
     <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.31/system.js"></script>
     <script src="https://kit.fontawesome.com/b1e99f21d9.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="../../../css/menu.css">
     <title>Menu</title>
 </head>
@@ -51,6 +52,12 @@
                     <span class="menu_title">Perchè questo sito?</span>
                 </div>
             </a>
+            <a href="../paese/photogallery.html" target="target">
+                <div class="scelta_menu_laterale">
+                    <i class="fas fa-image iconcina"></i>
+                    <span class="menu_title">Galleria Foto</span>
+                </div>
+            </a>
         </div>
 
     </div>
@@ -78,6 +85,16 @@
             var submenu = document.getElementById('submenu' + n);
             submenu.classList.toggle("show");
         }
+    </script>
+    <script>
+        function ToggleNightMode() {
+            const hours = new Date().getHours();
+            if (hours > 6 && hours < 20)
+                document.body.style.filter = "invert(0%)";
+            else
+                document.body.style.filter = "invert(100%)";
+        }
+        window.onload = ToggleNightMode();
     </script>
 </body>
 

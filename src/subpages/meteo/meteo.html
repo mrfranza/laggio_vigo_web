@@ -49,6 +49,19 @@
     <script src="../../../js/meteo.js"></script>
     <script src="../../../js/meteo_plus.js"></script>
     <script src="../../../js/modal.js"></script>
+    <script>
+        function ToggleNightMode2() {
+            const hours = new Date().getHours();
+            if (hours > 6 && hours < 20) {
+                document.getElementById('sfondo').style.filter = "invert(0%)";
+                document.getElementById('iFrame1').style.filter = "invert(0%)";
+            } else {
+                document.getElementById('sfondo').style.filter = "invert(100%)";
+                document.getElementById('iFrame1').style.filter = "invert(100%)";
+                document.getElementById('iFrame1').style.opacity = "0.7";
+            }
+        }
+    </script>
 </body>
 
 </html>
